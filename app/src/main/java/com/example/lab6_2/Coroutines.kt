@@ -18,7 +18,7 @@ class Coroutines : AppCompatActivity(){
         setContentView(R.layout.activity_main)
         val picture = findViewById<ImageView>(R.id.image)
         super.onCreate(savedInstanceState)
-        lifecycleScope.launch(Dispatchers.Default){
+        lifecycleScope.launch(Dispatchers.IO){
             Log.d(TAG, "Thread launched")
            val url = URL(url)
            val bitmap = BitmapFactory.decodeStream(url.openConnection().getInputStream())
